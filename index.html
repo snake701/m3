@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meiyang Accessory | 柔和飾品</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pop: {
+                            bg: '#FFFCF9',      /* 極淡的暖白 */
+                            pink: '#FFC8DD',    /* 柔和櫻花粉 */
+                            blue: '#BDE0FE',    /* 寶寶藍 */
+                            yellow: '#FFF4BD',  /* 奶油黃 */
+                            purple: '#E2C2C6',  /* 藕粉色 */
+                            dark: '#6D6875',    /* 暖灰紫字體 (比純黑更溫柔) */
+                            border: '#FFE5D9',  /* 淺桃色邊框 */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans TC', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'pop': '4px 4px 0px 0px #E5E5E5', /* 陰影改為淺灰色 */
+                        'pop-hover': '2px 2px 0px 0px #E5E5E5',
+                        'soft': '0 4px 20px rgba(189, 224, 254, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F3E7E9;
+            /* 雲朵般的漸層 */
+            background-image: linear-gradient(0deg, #F3E7E9 0%, #E3EEFF 99%, #E3EEFF 100%);
+        }
+        
+        /* 漂浮的背景裝飾動畫 */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite; /* 放慢速度 */
+        }
+        .animate-float-delayed {
+            animation: float 4.5s ease-in-out infinite;
+            animation-delay: 1.5s;
+        }
+
+        /* 按鈕 Q 彈效果 */
+        .btn-bounce {
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .btn-bounce:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body class="text-pop-dark min-h-screen flex flex-col items-center justify-center py-4 font-sans selection:bg-pop-pink selection:text-white">
+
+    <!-- 手機版面容器 -->
+    <main class="w-full max-w-[420px] min-h-[90vh] bg-pop-bg rounded-[3rem] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] relative flex flex-col p-6 overflow-hidden border-4 border-white/80 backdrop-blur-sm">
+        
+        <!-- 背景裝飾圓點 (顏色變淡) -->
+        <div class="absolute -top-10 -left-10 w-40 h-40 bg-pop-pink/40 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute top-20 -right-10 w-32 h-32 bg-pop-blue/40 rounded-full blur-3xl animate-float-delayed"></div>
+        <div class="absolute bottom-10 left-10 w-32 h-32 bg-pop-yellow/50 rounded-full blur-3xl animate-float"></div>
+
+        <!-- 頂部 Header -->
+        <header class="flex flex-col items-center mt-6 mb-8 relative z-10">
+            <!-- 頭像外框 -->
+            <div class="relative group cursor-pointer">
+                <!-- 光暈改為更柔和的白色 -->
+                <div class="absolute inset-0 bg-white/50 rounded-full blur-md"></div>
+                <div class="w-28 h-28 relative rounded-full border-[3px] border-white overflow-hidden shadow-sm bg-white">
+                     <!-- 這裡可以放您的 Logo 圖片 -->
+                     <div class="w-full h-full bg-[#FFF0F5] flex items-center justify-center text-4xl text-pop-pink font-bold italic">
+                         M
+                     </div>
+                </div>
+                <!-- 可愛的小裝飾 -->
+                <div class="absolute -bottom-2 -right-2 bg-white text-xl p-1.5 rounded-full shadow-sm text-pop-yellow rotate-12 group-hover:rotate-0 transition-transform">🌸</div>
+            </div>
+            
+            <h1 class="mt-4 text-3xl font-bold tracking-tight text-pop-dark/80">
+                MEIYANG
+            </h1>
+            <div class="flex items-center gap-2 mt-2">
+                <span class="px-3 py-1 bg-pop-pink/20 text-pop-dark text-xs font-medium rounded-full">#飾品控</span>
+                <span class="px-3 py-1 bg-pop-blue/20 text-pop-dark text-xs font-medium rounded-full">#日常穿搭</span>
+            </div>
+        </header>
+
+        <!-- 社群 Icon -->
+        <div class="flex justify-center gap-4 mb-8 relative z-10">
+             <a href="https://www.instagram.com/meiyang.16888" target="_blank" class="w-12 h-12 flex items-center justify-center bg-white rounded-2xl shadow-pop hover:shadow-pop-hover hover:-translate-y-1 transition-all text-pop-pink border border-pop-border/30">
+                <i data-lucide="instagram" class="w-6 h-6 stroke-[1.5]"></i>
+            </a>
+            <a href="#" class="w-12 h-12 flex items-center justify-center bg-white rounded-2xl shadow-pop hover:shadow-pop-hover hover:-translate-y-1 transition-all text-pop-blue border border-pop-border/30">
+                <i data-lucide="shopping-bag" class="w-6 h-6 stroke-[1.5]"></i>
+            </a>
+            <a href="#" class="w-12 h-12 flex items-center justify-center bg-white rounded-2xl shadow-pop hover:shadow-pop-hover hover:-translate-y-1 transition-all text-[#A0C4A9] border border-pop-border/30">
+                <i data-lucide="message-circle" class="w-6 h-6 stroke-[1.5]"></i>
+            </a>
+        </div>
+
+        <!-- 連結列表 (柔和風格按鈕) -->
+        <nav class="space-y-4 flex-grow relative z-10 px-2">
+            
+            <!-- Link 1 -->
+            <a href="#" class="btn-bounce block group relative">
+                <!-- 陰影層顏色變淡 -->
+                <div class="absolute inset-0 bg-pop-pink rounded-2xl translate-y-1.5 translate-x-1.5 transition-transform group-hover:translate-y-2 group-hover:translate-x-2 opacity-60"></div>
+                <div class="relative bg-white border border-pop-pink/50 rounded-2xl p-4 flex items-center justify-between group-hover:-translate-y-0.5 transition-transform">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-[#FFF0F5] rounded-full flex items-center justify-center text-lg text-pop-pink">🛍️</div>
+                        <span class="font-medium text-lg text-pop-dark">蝦皮賣場 Shopee</span>
+                    </div>
+                    <div class="bg-pop-pink/20 text-pop-dark text-xs px-3 py-1 rounded-full font-medium">GO</div>
+                </div>
+            </a>
+
+            <!-- Link 2 -->
+            <a href="#" class="btn-bounce block group relative">
+                <div class="absolute inset-0 bg-pop-blue rounded-2xl translate-y-1.5 translate-x-1.5 transition-transform group-hover:translate-y-2 group-hover:translate-x-2 opacity-60"></div>
+                <div class="relative bg-white border border-pop-blue/50 rounded-2xl p-4 flex items-center justify-between group-hover:-translate-y-0.5 transition-transform">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-[#F0F8FF] rounded-full flex items-center justify-center text-lg text-pop-blue">☁️</div>
+                        <span class="font-medium text-lg text-pop-dark">現貨 24H 出貨</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-pop-blue/70"></i>
+                </div>
+            </a>
+
+             <!-- Link 3 -->
+             <a href="#" class="btn-bounce block group relative">
+                <div class="absolute inset-0 bg-pop-yellow rounded-2xl translate-y-1.5 translate-x-1.5 transition-transform group-hover:translate-y-2 group-hover:translate-x-2 opacity-60"></div>
+                <div class="relative bg-white border border-pop-yellow/50 rounded-2xl p-4 flex items-center justify-between group-hover:-translate-y-0.5 transition-transform">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-[#FFFAF0] rounded-full flex items-center justify-center text-lg text-yellow-300">⭐</div>
+                        <span class="font-medium text-lg text-pop-dark">好評牆 Reviews</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-yellow-300"></i>
+                </div>
+            </a>
+
+        </nav>
+
+        <!-- Footer -->
+        <footer class="mt-8 text-center relative z-10">
+            <p class="text-xs font-medium text-pop-dark/40 tracking-widest">© 2024 MEIYANG ACCESSORY</p>
+        </footer>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

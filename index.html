@@ -14,10 +14,10 @@
                     colors: {
                         wood: {
                             base: '#FDFCF8',    /* 米白色 (卡片背景) */
-                            dark: '#4A3B32',    /* 深胡桃木 (主文字) */
-                            medium: '#8C7A6F',  /* 淺橡木/灰褐 (次要文字) */
-                            accent: '#AF8F7C',  /* 暖紅棕 (強調色) */
-                            moss: '#8A9175',    /* 乾燥苔綠 (搭配色) */
+                            dark: '#2C221F',    /* [修改] 極深黑茶色 (高對比主字) */
+                            medium: '#6E5B52',  /* [修改] 深暖灰 (清晰的次要文字) */
+                            accent: '#B85C52',  /* [修改] 赤丹色/鏽紅 (讓重點跳出來) */
+                            moss: '#6A7553',    /* [修改] 深苔綠 (更沈穩的搭配色) */
                             line: '#DBCBBF',    /* 淺木紋線條 */
                             bg: '#EBE5DE',      /* 燕麥色 (網頁背景) */
                             hover: '#F5EFE9'    /* 懸停背景 */
@@ -164,87 +164,87 @@
                         <span class="text-[10px] tracking-[0.2em] text-wood-accent font-bold uppercase border-b border-wood-accent/30 pb-0.5">Brand Story</span>
                     </div>
                     <div class="space-y-4">
-                        <p class="text-sm md:text-[15px] leading-8 tracking-wide text-wood-dark font-medium text-justify">
+                        <p class="text-sm md:text-[15px] leading-8 tracking-wide text-wood-dark font-medium text-justify font-sans">
                             以「花」為手作的出發點，把花最美的姿態永久保存，是另一種延續的美好。利用工藝樹脂、不凋花、乾燥花、日式凝膠，再搭配不同的異素材，讓飾品呈現出獨特的清新感。
                         </p>
-                        <p class="text-xs md:text-sm leading-7 text-wood-medium font-normal text-justify">
+                        <p class="text-xs md:text-sm leading-7 text-wood-medium font-medium text-justify">
                             期待「Mei Yang」能帶給妳喜悅，成為精緻生活中的一部份。
                         </p>
                     </div>
                 </div>
 
                 <!-- 02. 設計理念 -->
-                <div class="relative pl-6 py-2 border-l-2 border-wood-moss/30 ml-2 md:ml-0">
+                <div class="relative pl-6 py-2 border-l-2 border-wood-moss/40 ml-2 md:ml-0 bg-wood-hover/50 rounded-r-md">
                     <h4 class="text-xs font-bold text-wood-dark tracking-widest mb-2 flex items-center gap-2">
                         <i data-lucide="pen-tool" class="w-3 h-3 text-wood-moss"></i> 設計理念
                     </h4>
-                    <p class="text-xs md:text-sm leading-7 text-wood-dark/80 font-normal text-justify">
+                    <p class="text-xs md:text-sm leading-7 text-wood-dark/90 font-medium text-justify">
                         日式職人手作技巧，搭配與結合不同異素材，使手作飾品呈現獨特美感，適合獨一無二特別的你/妳。
                     </p>
                 </div>
 
                 <!-- 03. 特點與品項 -->
-                <div class="pt-2 border-t border-wood-line/40 border-dashed">
+                <div class="pt-2 border-t border-wood-line/60 border-dashed">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
                         <!-- 特點 -->
                         <div>
-                            <span class="block text-[10px] text-wood-medium tracking-widest mb-2">FEATURES</span>
+                            <span class="block text-[10px] text-wood-medium font-bold tracking-widest mb-2">FEATURES</span>
                             <div class="flex flex-wrap gap-2 justify-center md:justify-start">
-                                <span class="px-2.5 py-1 bg-wood-moss/10 text-wood-dark/80 text-[11px] rounded-[2px]">#手工製作</span>
-                                <span class="px-2.5 py-1 bg-wood-moss/10 text-wood-dark/80 text-[11px] rounded-[2px]">#原創飾品</span>
-                                <span class="px-2.5 py-1 bg-wood-moss/10 text-wood-dark/80 text-[11px] rounded-[2px]">#日式手作</span>
-                                <span class="px-2.5 py-1 bg-wood-moss/10 text-wood-dark/80 text-[11px] rounded-[2px]">#異素材</span>
+                                <span class="px-2.5 py-1 bg-wood-moss/10 border border-wood-moss/20 text-wood-dark text-[11px] font-medium rounded-[2px]">#手工製作</span>
+                                <span class="px-2.5 py-1 bg-wood-moss/10 border border-wood-moss/20 text-wood-dark text-[11px] font-medium rounded-[2px]">#原創飾品</span>
+                                <span class="px-2.5 py-1 bg-wood-moss/10 border border-wood-moss/20 text-wood-dark text-[11px] font-medium rounded-[2px]">#日式手作</span>
+                                <span class="px-2.5 py-1 bg-wood-moss/10 border border-wood-moss/20 text-wood-dark text-[11px] font-medium rounded-[2px]">#異素材</span>
                             </div>
                         </div>
                         
                         <!-- 品項 -->
                         <div>
-                            <span class="block text-[10px] text-wood-medium tracking-widest mb-2">ITEMS</span>
-                            <ul class="flex flex-wrap gap-x-3 gap-y-1 justify-center md:justify-start text-[11px] text-wood-dark/90 leading-relaxed list-none">
-                                <li class="flex items-center gap-1"><span class="w-1 h-1 rounded-full bg-wood-accent"></span>耳環</li>
-                                <li class="flex items-center gap-1"><span class="w-1 h-1 rounded-full bg-wood-accent"></span>項鍊</li>
-                                <li class="flex items-center gap-1"><span class="w-1 h-1 rounded-full bg-wood-accent"></span>手鍊</li>
-                                <li class="flex items-center gap-1"><span class="w-1 h-1 rounded-full bg-wood-accent"></span>髮飾</li>
-                                <li class="flex items-center gap-1"><span class="w-1 h-1 rounded-full bg-wood-accent"></span>吊飾</li>
+                            <span class="block text-[10px] text-wood-medium font-bold tracking-widest mb-2">ITEMS</span>
+                            <ul class="flex flex-wrap gap-x-3 gap-y-1 justify-center md:justify-start text-[11px] text-wood-dark font-medium leading-relaxed list-none">
+                                <li class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-wood-accent"></span>耳環</li>
+                                <li class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-wood-accent"></span>項鍊</li>
+                                <li class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-wood-accent"></span>手鍊</li>
+                                <li class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-wood-accent"></span>髮飾</li>
+                                <li class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-wood-accent"></span>吊飾</li>
                             </ul>
                         </div>
                     </div>
 
-                    <!-- 合作邀約 (已移除小幫手回覆字樣) -->
-                    <div class="mt-6 p-3 bg-wood-hover border border-wood-line/30 rounded-sm text-center md:text-left flex items-center justify-center md:justify-start gap-2">
-                        <span class="text-[11px] text-wood-medium tracking-wide">
+                    <!-- 合作邀約 -->
+                    <div class="mt-6 p-3 bg-wood-hover border border-wood-line/50 rounded-sm text-center md:text-left flex items-center justify-center md:justify-start gap-2 shadow-sm">
+                        <span class="text-[12px] text-wood-dark font-medium tracking-wide">
                             歡迎合作邀約，可私訊聊聊
                         </span>
                     </div>
                 </div>
             </section>
 
-            <!-- 精選作品區塊 (恢復動畫 & 置中) -->
+            <!-- 精選作品區塊 -->
             <section class="mb-8 w-full mt-auto pt-4 border-t border-wood-line/30">
-                <!-- 標題置中 (justify-center) -->
-                <div class="flex items-center gap-3 mb-4 justify-center opacity-80">
+                <!-- 標題置中 -->
+                <div class="flex items-center gap-3 mb-4 justify-center opacity-90">
                     <div class="h-[1px] w-12 bg-wood-line"></div>
                     <span class="text-xs tracking-[0.2em] text-wood-accent font-bold uppercase">Selected Works</span>
                     <div class="h-[1px] w-12 bg-wood-line"></div>
                 </div>
                 
-                <!-- 網格容器 (保持 grid-cols-2，但因外層有 padding 看起來像置中) -->
+                <!-- 網格容器 -->
                 <div class="grid grid-cols-2 gap-3">
-                    <!-- Item 1 (恢復 group-hover 動畫) -->
-                    <div class="aspect-square bg-white p-2 shadow-sm border border-wood-line/50 rounded-sm group overflow-hidden relative cursor-pointer">
-                        <img src="product_01.png" class="w-full h-full object-cover opacity-100 grayscale-[0.1] transition-transform duration-700 ease-out group-hover:scale-110" alt="日系手作飾品">
+                    <!-- Item 1 -->
+                    <div class="aspect-square bg-white p-2 shadow-sm border border-wood-line/50 rounded-sm group overflow-hidden relative cursor-pointer hover:border-wood-accent/30 transition-colors">
+                        <img src="product_01.png" class="w-full h-full object-cover opacity-100 transition-transform duration-700 ease-out group-hover:scale-110" alt="日系手作飾品">
                     </div>
                     <!-- Item 2 -->
-                    <div class="aspect-square bg-white p-2 shadow-sm border border-wood-line/50 rounded-sm group overflow-hidden relative cursor-pointer">
-                        <img src="product_02.png" class="w-full h-full object-cover opacity-100 grayscale-[0.1] transition-transform duration-700 ease-out group-hover:scale-110" alt="日系手作飾品">
+                    <div class="aspect-square bg-white p-2 shadow-sm border border-wood-line/50 rounded-sm group overflow-hidden relative cursor-pointer hover:border-wood-accent/30 transition-colors">
+                        <img src="product_02.png" class="w-full h-full object-cover opacity-100 transition-transform duration-700 ease-out group-hover:scale-110" alt="日系手作飾品">
                     </div>
                     <!-- Item 3 -->
-                    <div class="aspect-square bg-white p-2 shadow-sm border border-wood-line/50 rounded-sm group overflow-hidden relative cursor-pointer">
-                        <img src="product_03.png" class="w-full h-full object-cover opacity-100 grayscale-[0.1] transition-transform duration-700 ease-out group-hover:scale-110" alt="日系手作飾品">
+                    <div class="aspect-square bg-white p-2 shadow-sm border border-wood-line/50 rounded-sm group overflow-hidden relative cursor-pointer hover:border-wood-accent/30 transition-colors">
+                        <img src="product_03.png" class="w-full h-full object-cover opacity-100 transition-transform duration-700 ease-out group-hover:scale-110" alt="日系手作飾品">
                     </div>
                      <!-- Item 4 -->
-                    <div class="aspect-square bg-white p-2 shadow-sm border border-wood-line/50 rounded-sm group overflow-hidden relative cursor-pointer">
-                        <img src="product_04.png" class="w-full h-full object-cover opacity-100 grayscale-[0.1] transition-transform duration-700 ease-out group-hover:scale-110" alt="日系手作飾品">
+                    <div class="aspect-square bg-white p-2 shadow-sm border border-wood-line/50 rounded-sm group overflow-hidden relative cursor-pointer hover:border-wood-accent/30 transition-colors">
+                        <img src="product_04.png" class="w-full h-full object-cover opacity-100 transition-transform duration-700 ease-out group-hover:scale-110" alt="日系手作飾品">
                     </div>
                 </div>
             </section>
@@ -252,7 +252,7 @@
             <!-- Footer -->
             <footer class="mt-4 pt-6 border-t border-wood-line/40 flex flex-col items-center md:items-start text-center md:text-left relative z-10 w-full">
                 <div class="w-full text-center md:text-right">
-                    <p class="text-[10px] text-wood-medium/70 tracking-[0.2em] font-sans font-medium">© 2024 Mei Yang 美揚日系手作飾品</p>
+                    <p class="text-[10px] text-wood-medium tracking-[0.2em] font-sans font-medium">© 2024 Mei Yang 美揚日系手作飾品</p>
                 </div>
             </footer>
         </div>

@@ -42,19 +42,37 @@
                 radial-gradient(circle at 85% 75%, rgba(138, 145, 117, 0.15) 0%, transparent 45%);
         }
         
-        /* 飄落動畫 (改為落葉色系) */
-        .leaf {
+        /* 基礎花朵樣式 */
+        .flower {
             position: absolute;
-            background-color: #D4C5B9;
-            border-radius: 10% 70%; /* 葉子形狀 */
-            opacity: 0.6;
-            animation: fall linear infinite;
+            pointer-events: none;
+            z-index: 50;
+            top: -10vh; /* 起始位置在畫面外 */
         }
 
-        @keyframes fall {
-            0% { opacity: 0; transform: translate(0, -10vh) rotate(0deg); }
-            10% { opacity: 0.8; }
-            100% { opacity: 0; transform: translate(30px, 100vh) rotate(360deg); }
+        /* 隨機動畫 1: 向右飄+旋轉 */
+        @keyframes fall-1 {
+            0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+            10% { opacity: var(--opacity-val); }
+            90% { opacity: var(--opacity-val); }
+            100% { transform: translate(10vw, 110vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* 隨機動畫 2: 向左飄+逆時針旋轉 */
+        @keyframes fall-2 {
+            0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+            10% { opacity: var(--opacity-val); }
+            90% { opacity: var(--opacity-val); }
+            100% { transform: translate(-10vw, 110vh) rotate(-180deg); opacity: 0; }
+        }
+
+        /* 隨機動畫 3: S型飄落+慢速旋轉 */
+        @keyframes fall-3 {
+            0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+            10% { opacity: var(--opacity-val); }
+            50% { transform: translate(5vw, 55vh) rotate(90deg); }
+            90% { opacity: var(--opacity-val); }
+            100% { transform: translate(-5vw, 110vh) rotate(180deg); opacity: 0; }
         }
 
         /* 和紙紋理 */
@@ -86,13 +104,13 @@
 </head>
 <body class="text-wood-dark min-h-screen flex flex-col items-center justify-center py-4 md:py-8 px-2 md:px-4 font-serif relative overflow-x-hidden selection:bg-wood-accent selection:text-white">
 
-    <!-- 背景層 -->
-    <div id="leaves-container" class="fixed inset-0 pointer-events-none z-0"></div>
+    <!-- 背景層 (前景花朵) -->
+    <div id="flower-container" class="fixed inset-0 pointer-events-none z-50 overflow-hidden"></div>
 
     <!-- 主要容器 -->
     <main class="w-[96%] max-w-[540px] md:w-full md:max-w-4xl min-h-[85vh] md:min-h-[600px] md:h-auto bg-wood-base washi-card shadow-paper relative flex flex-col md:flex-row md:items-start md:gap-12 p-5 md:p-16 z-10 border border-wood-line transition-all duration-500 mx-auto rounded-sm md:rounded-none">
         
-        <!-- 四角的裝飾線條 (改為深木色) -->
+        <!-- 四角的裝飾線條 -->
         <div class="absolute top-3 left-3 md:top-5 md:left-5 w-8 h-8 md:w-12 md:h-12 border-t border-l border-wood-medium/30"></div>
         <div class="absolute top-3 right-3 md:top-5 md:right-5 w-8 h-8 md:w-12 md:h-12 border-t border-r border-wood-medium/30"></div>
         <div class="absolute bottom-3 left-3 md:bottom-5 md:left-5 w-8 h-8 md:w-12 md:h-12 border-b border-l border-wood-medium/30"></div>
@@ -103,7 +121,7 @@
             <!-- Header -->
             <header class="flex flex-col items-center mb-8 md:mb-0 relative">
                 <div class="relative mb-6">
-                    <!-- Logo 動畫圈圈 (改為乾燥苔綠色) -->
+                    <!-- Logo 動畫圈圈 -->
                     <svg class="absolute -top-4 -left-4 w-40 h-40 text-wood-moss animate-sway opacity-50 pointer-events-none" viewBox="0 0 100 100">
                         <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="0.5" stroke-dasharray="3,6" />
                         <path d="M50 8 A42 42 0 0 1 92 50 A42 42 0 0 1 50 92 A42 42 0 0 1 8 50 A42 42 0 0 1 50 8" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="12,12" opacity="0.6"/>
@@ -154,7 +172,7 @@
                     </p>
                 </div>
 
-                <!-- 第二段：品牌宣言 (背景色微調) -->
+                <!-- 第二段：品牌宣言 -->
                 <div class="py-4 px-5 bg-wood-line/20 rounded-lg border border-wood-line/40 relative mt-2">
                     <i data-lucide="quote" class="w-4 h-4 text-wood-moss absolute top-2 left-2 opacity-60"></i>
                     <h4 class="text-sm font-bold text-wood-dark tracking-widest mb-2 mt-1">Mei Yang 美揚日系手作飾品</h4>
@@ -173,7 +191,7 @@
 
                 <!-- 第三段：特點與品項 -->
                 <div class="pt-4 flex flex-col items-center md:items-start w-full">
-                    <!-- 特點 (顏色調整為苔綠/木色) -->
+                    <!-- 特點 -->
                     <div class="flex flex-nowrap overflow-x-auto no-scrollbar w-full justify-center md:justify-start gap-2 mb-3 pb-1">
                         <span class="px-3 py-1 bg-wood-moss/10 border border-wood-moss/20 rounded-full text-[11px] text-wood-dark font-medium tracking-widest whitespace-nowrap">手工製作</span>
                         <span class="px-3 py-1 bg-wood-moss/10 border border-wood-moss/20 rounded-full text-[11px] text-wood-dark font-medium tracking-widest whitespace-nowrap">原創飾品</span>
@@ -250,32 +268,70 @@
     <script>
         lucide.createIcons();
 
-        // 產生飄落的葉子 (顏色調整為乾燥色系)
-        function createLeaves() {
-            const container = document.getElementById('leaves-container');
-            const leafCount = 10;
+        // 產生飄落的「整朵」花
+        function createFlowers() {
+            const container = document.getElementById('flower-container');
+            const flowerCount = 12; // 調整數量
 
-            for (let i = 0; i < leafCount; i++) {
-                const leaf = document.createElement('div');
-                leaf.classList.add('leaf');
-                
-                const size = Math.random() * 8 + 6 + 'px';
-                leaf.style.width = size;
-                leaf.style.height = size;
-                leaf.style.left = Math.random() * 100 + 'vw';
-                leaf.style.animationDuration = Math.random() * 8 + 10 + 's'; // 飄慢一點
-                leaf.style.animationDelay = Math.random() * 5 + 's';
-                
-                // 乾燥葉與米色系
-                const colors = ['#D4C5B9', '#E6DDD5', '#C4B7A6', '#B0A89E'];
-                leaf.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            // 簡單的五瓣花 SVG 路徑
+            const flowerSVG = `
+                <svg viewBox="0 0 100 100" fill="currentColor" class="w-full h-full">
+                    <path d="M50 50 
+                        C40 80 10 70 20 50 
+                        C10 30 40 20 50 50 
+                        C60 20 90 30 80 50 
+                        C90 70 60 80 50 50 
+                        Z" opacity="0.9"/>
+                    <path d="M50 50 
+                        Q30 10 50 0 Q70 10 50 50
+                        Q90 30 100 50 Q90 70 50 50
+                        Q70 90 50 100 Q30 90 50 50
+                        Q10 70 0 50 Q10 30 50 50
+                        Z" />
+                </svg>
+            `;
 
-                container.appendChild(leaf);
+            for (let i = 0; i < flowerCount; i++) {
+                const flower = document.createElement('div');
+                flower.classList.add('flower');
+                
+                // 插入 SVG
+                flower.innerHTML = flowerSVG;
+                
+                // 隨機大小 (稍微大一點，因為是整朵花)
+                const size = Math.random() * 14 + 12 + 'px';
+                flower.style.width = size;
+                flower.style.height = size;
+                
+                // 隨機水平起始位置
+                flower.style.left = Math.random() * 100 + 'vw';
+                
+                // 隨機動畫參數
+                const duration = Math.random() * 8 + 10 + 's'; // 10~18秒
+                const delay = Math.random() * 10 + 's';
+                flower.style.animationDuration = duration;
+                flower.style.animationDelay = delay;
+
+                // 隨機選擇動畫路徑 (fall-1, fall-2, fall-3)
+                const animType = Math.floor(Math.random() * 3) + 1;
+                flower.style.animationName = `fall-${animType}`;
+                
+                // 顏色：木質調配色 (乾燥粉、淡米色、淺桃紅)
+                const colors = ['#F2DCD8', '#FAE3E0', '#FFF0F5', '#EBD2CE', '#DFCAC8'];
+                flower.style.color = colors[Math.floor(Math.random() * colors.length)];
+                
+                // 隨機透明度 (CSS 變數)
+                // 範圍 0.3 ~ 0.6，避免太搶眼
+                const opacityVal = (Math.random() * 0.3 + 0.3).toString();
+                flower.style.setProperty('--opacity-val', opacityVal);
+
+                container.appendChild(flower);
             }
         }
 
-        createLeaves();
+        createFlowers();
     </script>
 </body>
 </html>
+
 
